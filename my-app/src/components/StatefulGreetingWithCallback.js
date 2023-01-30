@@ -1,7 +1,7 @@
 import React from "react";
 
 // needs extends React.Component so that it's recognised as React and not just simple JS
-class StatefulGreeting extends React.Component {
+class StatefulGreetingWithCallback extends React.Component {
     // constructor method is always called first, and state is usually defined here
     // best practice to also add props on constructor and super functions so that any future props added are taken into account.
     constructor(props) {
@@ -17,12 +17,21 @@ class StatefulGreeting extends React.Component {
     }
 
     handleClick() {
-        // setState() is an asynchronous function
+        // setState() is an asynchronous function, meaning it runs in the background while other things are happening
         // sets new state properties and keeps previous if unchanged
         this.setState({
             introduction: "Goodbye!",
+            buttonText: "Enter",
+        // add a callback function here so the code is run after setState()
+        }, () => {
+            console.log('new state', this.state.introduction)
+            console.log('new state', this.state.buttonText)
         });
+        // this code executes before setState() above as setState is asynchronous
+        // logs out "Hello!"
         console.log(this.state.introduction)
+        // logs out "Exit"
+        console.log(this.state.buttonText)
     }
 
     // classes can't return without render() method first
@@ -41,4 +50,4 @@ class StatefulGreeting extends React.Component {
     }
 }
 
-export default StatefulGreeting;
+export default StatefulGreetingWithCallback;
