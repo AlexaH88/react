@@ -2,10 +2,33 @@ import React from "react";
 
 // needs extends React.Component so that it's recognised as React and not just simple JS
 class StatefulGreeting extends React.Component {
-    // classes can't return without render() first
+    // constructor method is always called first, and state is usually defined here
+    // best practice to also add props on constructor and super functions so that any future props added are taken into account.
+    constructor(props) {
+        // must always call super function first. Ensuring that parent (React.Component) is also called.
+        super(props);
+        // set state as an empty object
+        // this.state = {};
+        // create different state properties
+        this.state = {
+            introduction: "Hello!",
+            buttonText: "Exit",
+        }
+    }
+
+    // classes can't return without render() method first
     render() {
         // this is needed on class components in order to render props. Because Component object already has props.
-        return <h1>Hello, {this.props.greeting}</h1>
+        // returning only one value
+        // return <h1>Hello, {this.props.greeting}</h1>
+        // return () to allow for multiple things to be returned
+        return (
+            // React only wants one element returned from render(). Contain everything in a div.
+            <div>
+                <h1>{this.state.introduction} {this.props.greeting}</h1>
+                <button>{this.state.buttonText}</button>
+            </div>
+        )
     }
 }
 
