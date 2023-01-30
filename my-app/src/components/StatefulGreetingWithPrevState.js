@@ -20,20 +20,40 @@ class StatefulGreetingWithPrevState extends React.Component {
     handleClick() {
         // setState() is an asynchronous function, meaning it runs in the background while other things are happening
         // sets new state properties and keeps previous if unchanged
-        this.setState({
-            // ternary conditional statement: if the introduction is Hello it will change to Goodbye, otherwise it will remain Hello
-            introduction: this.state.introduction === "Hello" ? "Goodbye!" : "Hello",
-            buttonText: this.state.buttonText === "Exit" ? "Enter" : "Exit",
-        // add a callback function here so the code is run after setState()
-        }, () => {
-            console.log('new state', this.state.introduction)
-            console.log('new state', this.state.buttonText)
-        });
+        // incorrect method
+        // this.setState({
+        //     // ternary conditional statement: if the introduction is Hello it will change to Goodbye, otherwise it will remain Hello
+        //     introduction: this.state.introduction === "Hello" ? "Goodbye!" : "Hello",
+        //     buttonText: this.state.buttonText === "Exit" ? "Enter" : "Exit",
+        // // add a callback function here so the code is run after setState()
+        // }, () => {
+        //     console.log('new state', this.state.introduction)
+        //     console.log('new state', this.state.buttonText)
+        // });
+
+        // correct method
+        this.setState((prevState, prevProps) => {
+            console.log('Previous State:', prevState)
+            console.log('Previous Props:', prevProps)
+            return {
+                introduction: prevState.introduction === "Hello!" ? "Goodbye" : "Hello!",
+                buttonText: prevState.buttonText === "Exit" ? "Enter" : "Exit"
+            }
+        })
     }
 
     increment() {
-        this.setState({
-            count: this.state.count +1,
+        // incorrect method
+        // this.setState({
+        //     count: this.state.count +1,
+        // })
+        // prevState and prevProps method on setState
+        this.setState((prevState, prevProps) => {
+            console.log('Previous State:', prevState)
+            console.log('Previous Props:', prevProps)
+            return {
+                count: prevState.count + 1
+            }
         })
     }
 
