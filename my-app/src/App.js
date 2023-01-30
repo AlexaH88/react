@@ -3,7 +3,8 @@ import './App.css';
 // import FunctionalGreeting from './components/FunctionalGreeting';
 // import FunctionalGreetingWithProps from './components/FunctionalGreetingWithProps';
 // import StatefulGreeting from './components/StatefulGreeting';
-import StatefulGreetingWithCallback from './components/StatefulGreetingWithCallback';
+// import StatefulGreetingWithCallback from './components/StatefulGreetingWithCallback';
+import StatefulGreetingWithPrevState from './components/StatefulGreetingWithPrevState';
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       {/* <FunctionalGreeting /> */}
       {/* <FunctionalGreetingWithProps greeting="nice to meet you!" name="Mike" age="32" /> */}
       {/* <StatefulGreeting greeting="I'm a stateful component!"/> */}
-      <StatefulGreetingWithCallback />
+      {/* <StatefulGreetingWithCallback /> */}
+      <StatefulGreetingWithPrevState />
     </div>
   );
 }
