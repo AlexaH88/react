@@ -13,7 +13,16 @@ class StatefulGreeting extends React.Component {
         this.state = {
             introduction: "Hello!",
             buttonText: "Exit",
-        }
+        };
+    }
+
+    handleClick() {
+        // sets new state properties and keeps previous if unchanged
+        this.setState({
+            introduction: "Goodbye!",
+            buttonText: "Enter",
+        });
+        console.log(this.state.introduction)
     }
 
     // classes can't return without render() method first
@@ -26,9 +35,9 @@ class StatefulGreeting extends React.Component {
             // React only wants one element returned from render(). Contain everything in a div.
             <div>
                 <h1>{this.state.introduction} {this.props.greeting}</h1>
-                <button>{this.state.buttonText}</button>
+                <button onClick={() => this.handleClick()}>{this.state.buttonText}</button>
             </div>
-        )
+        );
     }
 }
 
