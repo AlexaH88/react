@@ -31,13 +31,26 @@ function RenderingLists() {
         <div>
             {
                 bookList.map(book => {
-                    return <h2>{book}</h2>
+                    // key needs to be added as it needs to be unique in React. And goes on the outermost element
+                    return <h2 key={book}>{book}</h2>
                 })
             }
             <hr />
             {
                 books.map(book => {
-                    return <Book book={book}/>
+                    return (
+                        <div key={book.title}>
+                            <h5>{book.title}</h5>
+                            <p>{book.author}</p>
+                            <p>{book.pages}</p>
+                        </div>
+                    )
+                })
+            }
+            <hr />
+            {
+                books.map(book => {
+                    return <Book key={book.title} book={book}/>
                 })
             }
         </div>
