@@ -1,5 +1,6 @@
 import './App.css';
-import ControlledForm from './components/ControlledForm';
+// import ControlledForm from './components/ControlledForm';
+import UncontrolledForm from './components/UncontrolledForm';
 // import LifeCyclesCDM from './components/LifeCyclesCDM';
 // import LifeCyclesCDU from './components/LifeCyclesCDU';
 // import LifeCyclesCWU from './components/LifeCyclesCWU';
@@ -36,7 +37,8 @@ function App() {
       {/* <LifeCyclesCDM /> */}
       {/* <LifeCyclesCDU /> */}
       {/* <LifeCyclesCWU /> */}
-      <ControlledForm />
+      {/* <ControlledForm /> */}
+      <UncontrolledForm />
     </div>
   );
 }
