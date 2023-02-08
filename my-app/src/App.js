@@ -1,5 +1,6 @@
 import './App.css';
-import UseEffectCounter from './components/UseEffectCounter';
+// import UseEffectCounter from './components/UseEffectCounter';
+import UseEffectCounterContainer from './components/UseEffectCounterContainer';
 // import ControlledFormHooks from './components/ControlledFormHooks';
 // import UseStateWithArrays from './components/UseStateWithArrays';
 // import UseStateWithObjects from './components/useStateWithObjects';
@@ -48,7 +49,8 @@ function App() {
       {/* <ControlledFormHooks /> */}
       {/* <UseStateWithArrays /> */}
       {/* <UseStateWithObjects /> */}
-      <UseEffectCounter />
+      {/* <UseEffectCounter /> */}
+      <UseEffectCounterContainer />
     </div>
   );
 }

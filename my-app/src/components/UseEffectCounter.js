@@ -19,9 +19,14 @@ function UseEffectCounter() {
         // setInterval takes two parameters: the function you want to run and how long you want the interval to be
         // time is updated by 1 every 1000 milliseconds
         const interval = setInterval(() => {
+            console.log('Interval executed');
             setTime(time => time + 1)
         }, 1000);
-        console.log(interval)
+        // cleanup function
+        return () => {
+            console.log('Cleaning up')
+            clearInterval(interval);
+        }
         // pass an empty array as a second parameter to only run once
     }, []);
 
