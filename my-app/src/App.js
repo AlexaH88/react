@@ -1,7 +1,8 @@
 import './App.css';
+import UseEffectCounter from './components/UseEffectCounter';
 // import ControlledFormHooks from './components/ControlledFormHooks';
 // import UseStateWithArrays from './components/UseStateWithArrays';
-import UseStateWithObjects from './components/useStateWithObjects';
+// import UseStateWithObjects from './components/useStateWithObjects';
 // import SearchBar from './components/SearchBar';
 // import ControlledForm from './components/ControlledForm';
 // import UncontrolledForm from './components/UncontrolledForm';
@@ -46,7 +47,8 @@ function App() {
       {/* <SearchBar /> */}
       {/* <ControlledFormHooks /> */}
       {/* <UseStateWithArrays /> */}
-      <UseStateWithObjects />
+      {/* <UseStateWithObjects /> */}
+      <UseEffectCounter />
     </div>
   );
 }
