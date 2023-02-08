@@ -3,9 +3,9 @@ import React, {useState} from "react"
 function UseStateWithArrays() {
 
     const [nums, setNums] = useState([1, 2, 3]);
+    
     // use spread operator ... to include current array before adding more
     // use nums.length = 3 as there are 3 numbers, + 1 to start counting from 4
-    
     const addNums = () => {
         setNums([...nums, nums.length + 1]);
     }
