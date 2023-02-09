@@ -1,5 +1,6 @@
 import './App.css';
-import HTTPRequests from './components/HTTPRequests';
+import HTTPPost from './components/HTTPPost';
+// import HTTPRequests from './components/HTTPRequests';
 // import UseEffectCounter from './components/UseEffectCounter';
 // import UseEffectCounterContainer from './components/UseEffectCounterContainer';
 // import ControlledFormHooks from './components/ControlledFormHooks';
@@ -52,7 +53,8 @@ function App() {
       {/* <UseStateWithObjects /> */}
       {/* <UseEffectCounter /> */}
       {/* <UseEffectCounterContainer /> */}
-      <HTTPRequests />
+      {/* <HTTPRequests /> */}
+      <HTTPPost />
     </div>
   );
 }
